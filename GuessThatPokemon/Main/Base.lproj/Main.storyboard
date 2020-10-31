@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessThatPokemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess That Pokemon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q25-5O-Ruh">
+                                <rect key="frame" x="20" y="44" width="374" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="gDk-Pm-XsV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pipdark" translatesAutoresizingMaskIntoConstraints="NO" id="4Io-QR-2b5">
+                                <rect key="frame" x="20" y="202" width="374" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253" id="Fh9-HQ-Uam"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-SX-SRS" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="812" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H3p-tr-sil"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="???">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJh-dD-aVu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-Hp-cir" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="754" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9A9-vS-ZnV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="???">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuw-gz-qVL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nc-LR-Iur" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
+                                <rect key="frame" x="20" y="696" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.098026342690000004" blue="0.1089834496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Sky-dh-qk2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="???">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3CH-eR-LCo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.77094990019999998" green="0.22135734560000001" blue="0.33030223850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q25-5O-Ruh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="28L-6h-yHL"/>
+                            <constraint firstItem="4Io-QR-2b5" firstAttribute="top" secondItem="Q25-5O-Ruh" secondAttribute="bottom" constant="8" id="2JP-tn-zwQ"/>
+                            <constraint firstItem="YaT-SX-SRS" firstAttribute="top" secondItem="h7P-Hp-cir" secondAttribute="bottom" constant="8" id="520-LJ-o4F"/>
+                            <constraint firstItem="Q25-5O-Ruh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GbF-rI-yCN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7P-Hp-cir" secondAttribute="trailing" constant="20" id="HKj-Fd-ePH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaT-SX-SRS" secondAttribute="trailing" constant="20" id="Ldb-Qz-gRH"/>
+                            <constraint firstItem="h7P-Hp-cir" firstAttribute="top" secondItem="8Nc-LR-Iur" secondAttribute="bottom" constant="8" id="NdG-zt-BiY"/>
+                            <constraint firstItem="h7P-Hp-cir" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PU9-WQ-Hoc"/>
+                            <constraint firstItem="YaT-SX-SRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ScG-8h-3z2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q25-5O-Ruh" secondAttribute="trailing" constant="20" id="Xav-hu-soR"/>
+                            <constraint firstItem="8Nc-LR-Iur" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cNH-t5-D3j"/>
+                            <constraint firstItem="4Io-QR-2b5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eWS-HM-KFy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Nc-LR-Iur" secondAttribute="trailing" constant="20" id="hDO-1j-Dy4"/>
+                            <constraint firstItem="YaT-SX-SRS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="p1y-rb-ZNo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Io-QR-2b5" secondAttribute="trailing" constant="20" id="qH9-GA-ez0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="optionOneButton" destination="8Nc-LR-Iur" id="KGL-cY-slB"/>
+                        <outlet property="optionThreeButton" destination="YaT-SX-SRS" id="fsC-PH-NwY"/>
+                        <outlet property="optionTwoButton" destination="h7P-Hp-cir" id="kTO-QE-ZhE"/>
+                        <outlet property="randomImage" destination="4Io-QR-2b5" id="KZd-cE-TXm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.37681159420291" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pipdark" width="1007" height="1229"/>
+    </resources>
+</document>
