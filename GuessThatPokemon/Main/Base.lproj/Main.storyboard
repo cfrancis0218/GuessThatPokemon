@@ -72,18 +72,33 @@
                                     <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3CH-eR-LCo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-ki-9oG" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
+                                <rect key="frame" x="294" y="648" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fMz-Ws-rlt"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4qx-av-Nwx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.77094990019999998" green="0.22135734560000001" blue="0.33030223850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.078238140119999994" green="0.083438301579999999" blue="0.091727474619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Q25-5O-Ruh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="28L-6h-yHL"/>
                             <constraint firstItem="4Io-QR-2b5" firstAttribute="top" secondItem="Q25-5O-Ruh" secondAttribute="bottom" constant="8" id="2JP-tn-zwQ"/>
+                            <constraint firstItem="8Nc-LR-Iur" firstAttribute="top" secondItem="OsM-ki-9oG" secondAttribute="bottom" constant="8" symbolic="YES" id="3kr-1G-cny"/>
                             <constraint firstItem="YaT-SX-SRS" firstAttribute="top" secondItem="h7P-Hp-cir" secondAttribute="bottom" constant="8" id="520-LJ-o4F"/>
+                            <constraint firstItem="OsM-ki-9oG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="294" id="D8t-TN-Y9C"/>
                             <constraint firstItem="Q25-5O-Ruh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GbF-rI-yCN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7P-Hp-cir" secondAttribute="trailing" constant="20" id="HKj-Fd-ePH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YaT-SX-SRS" secondAttribute="trailing" constant="20" id="Ldb-Qz-gRH"/>
                             <constraint firstItem="h7P-Hp-cir" firstAttribute="top" secondItem="8Nc-LR-Iur" secondAttribute="bottom" constant="8" id="NdG-zt-BiY"/>
                             <constraint firstItem="h7P-Hp-cir" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PU9-WQ-Hoc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OsM-ki-9oG" secondAttribute="trailing" constant="20" id="Rb7-jg-34j"/>
                             <constraint firstItem="YaT-SX-SRS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ScG-8h-3z2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q25-5O-Ruh" secondAttribute="trailing" constant="20" id="Xav-hu-soR"/>
                             <constraint firstItem="8Nc-LR-Iur" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cNH-t5-D3j"/>

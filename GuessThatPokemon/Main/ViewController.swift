@@ -66,16 +66,32 @@ class ViewController: UIViewController {
                 print("No Pokemon")
         }
         
+        // Animations
+        self.randomImage.alpha = 0.0
         
+        UIImageView.animate(withDuration: 0.7, animations: ({
+            self.randomImage.center.y += -100
+            self.randomImage.alpha = 1.0
+        }))
+        
+        // Shuffle through Names to present on buttons
         pokemonNames.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        // Set Titles to buttons
         optionOneButton.setTitle(pokemonNames[0], for: .normal)
         optionTwoButton.setTitle(pokemonNames[1], for: .normal)
         optionThreeButton.setTitle(pokemonNames[2], for: .normal)
-        
+        // Clip images to bounds
+        randomImage.clipsToBounds = true
+        // Return to Original Color
         optionOneButton.backgroundColor = UIColor(red: 22/255.0, green: 24/255.0, blue: 26/255.0, alpha: 1.0)
         optionTwoButton.backgroundColor = UIColor(red: 22/255.0, green: 24/255.0, blue: 26/255.0, alpha: 1.0)
         optionThreeButton.backgroundColor = UIColor(red: 22/255.0, green: 24/255.0, blue: 26/255.0, alpha: 1.0)
+    }
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "", message: "Would You like to continue?", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Continue", style: .default, handler: guessThatPokemon))
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func correctButtonTapped(_ sender: UIButton) {
@@ -232,13 +248,11 @@ class ViewController: UIViewController {
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
+        } else {
+            optionOneButton.backgroundColor = .systemRed
+            optionTwoButton.backgroundColor = .systemRed
+            optionThreeButton.backgroundColor = .systemRed
         }
-        
-        let alertController = UIAlertController(title: "", message: "Would You like to continue?", preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Continue", style: .default, handler: guessThatPokemon))
-        present(alertController, animated: true, completion: nil)
-        
-        
     }
 }
 
