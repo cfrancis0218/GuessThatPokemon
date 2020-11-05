@@ -11,11 +11,13 @@ class ViewController: UIViewController {
     
     var pokemonNames = [String]()
     
-    var correctAnswer = 0
+    @IBOutlet weak var optionOneButton: UIButton!
+    @IBOutlet weak var optionTwoButton: UIButton!
+    @IBOutlet weak var optionThreeButton: UIButton!
     
-    @IBOutlet var optionOneButton: UIButton!
-    @IBOutlet var optionTwoButton: UIButton!
-    @IBOutlet var optionThreeButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    
     @IBOutlet var randomImage: UIImageView!
     
     
@@ -68,15 +70,20 @@ class ViewController: UIViewController {
         
         // Animations
         self.randomImage.alpha = 0.0
+        self.nextButton.isHidden = true
         
         UIImageView.animate(withDuration: 0.7, animations: ({
             self.randomImage.center.y += -100
             self.randomImage.alpha = 1.0
         }))
         
+        UIButton.animate(withDuration: 0.5, animations: ({
+            self.nextButton.center.x += -100
+            self.nextButton.isHidden = false
+        }))
+        
         // Shuffle through Names to present on buttons
         pokemonNames.shuffle()
-        correctAnswer = Int.random(in: 0...2)
         // Set Titles to buttons
         optionOneButton.setTitle(pokemonNames[0], for: .normal)
         optionTwoButton.setTitle(pokemonNames[1], for: .normal)
@@ -94,156 +101,161 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    // Main
     @IBAction func correctButtonTapped(_ sender: UIButton) {
         
-        if sender.tag == 0 && randomImage.image == UIImage(named: "pipdark") && optionOneButton.titleLabel?.text == "Piplup" {
+        let tagIsZero = (sender.tag == 0)
+        let tagIsOne = (sender.tag == 1)
+        let tagIsTwo = (sender.tag == 2)
+        
+        if tagIsZero && randomImage.image == UIImage(named: "pipdark") && optionOneButton.titleLabel?.text == "Piplup" {
             print(sender.tag)
             
             randomImage.image = #imageLiteral(resourceName: "piplup")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "pipdark") && optionTwoButton.titleLabel?.text == "Piplup" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "pipdark") && optionTwoButton.titleLabel?.text == "Piplup" {
             randomImage.image = #imageLiteral(resourceName: "piplup")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "pipdark") && optionThreeButton.titleLabel?.text == "Piplup" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "pipdark") && optionThreeButton.titleLabel?.text == "Piplup" {
             randomImage.image = #imageLiteral(resourceName: "piplup")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "pikdark") && optionOneButton.titleLabel?.text == "Pikachu" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "pikdark") && optionOneButton.titleLabel?.text == "Pikachu" {
             randomImage.image = #imageLiteral(resourceName: "pikachu")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "pikdark") && optionTwoButton.titleLabel?.text == "Pikachu" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "pikdark") && optionTwoButton.titleLabel?.text == "Pikachu" {
             randomImage.image = #imageLiteral(resourceName: "pikachu")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "pikdark") && optionThreeButton.titleLabel?.text == "Pikachu" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "pikdark") && optionThreeButton.titleLabel?.text == "Pikachu" {
             randomImage.image = #imageLiteral(resourceName: "pikachu")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "joltdark") && optionOneButton.titleLabel?.text == "Jolteon" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "joltdark") && optionOneButton.titleLabel?.text == "Jolteon" {
             randomImage.image = #imageLiteral(resourceName: "jolteon")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "joltdark") && optionTwoButton.titleLabel?.text == "Jolteon" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "joltdark") && optionTwoButton.titleLabel?.text == "Jolteon" {
             randomImage.image = #imageLiteral(resourceName: "jolteon")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "joltdark") && optionThreeButton.titleLabel?.text == "Jolteon" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "joltdark") && optionThreeButton.titleLabel?.text == "Jolteon" {
             randomImage.image = #imageLiteral(resourceName: "jolteon")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "zarddark") && optionOneButton.titleLabel?.text == "Charizard" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "zarddark") && optionOneButton.titleLabel?.text == "Charizard" {
             randomImage.image = #imageLiteral(resourceName: "charizard")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "zarddark") && optionTwoButton.titleLabel?.text == "Charizard" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "zarddark") && optionTwoButton.titleLabel?.text == "Charizard" {
             randomImage.image = #imageLiteral(resourceName: "charizard")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "zarddark") && optionThreeButton.titleLabel?.text == "Charizard" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "zarddark") && optionThreeButton.titleLabel?.text == "Charizard" {
             randomImage.image = #imageLiteral(resourceName: "charizard")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "bulbdark") && optionOneButton.titleLabel?.text == "Bulbasaur" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "bulbdark") && optionOneButton.titleLabel?.text == "Bulbasaur" {
             randomImage.image = #imageLiteral(resourceName: "bulbasaur")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "bulbdark") && optionTwoButton.titleLabel?.text == "Bulbasaur" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "bulbdark") && optionTwoButton.titleLabel?.text == "Bulbasaur" {
             randomImage.image = #imageLiteral(resourceName: "bulbasaur")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "bulbdark") && optionThreeButton.titleLabel?.text == "Bulbasaur" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "bulbdark") && optionThreeButton.titleLabel?.text == "Bulbasaur" {
             randomImage.image = #imageLiteral(resourceName: "bulbasaur")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "catdark") && optionOneButton.titleLabel?.text == "Caterpie" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "catdark") && optionOneButton.titleLabel?.text == "Caterpie" {
             randomImage.image = #imageLiteral(resourceName: "caterpie")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "catdark") && optionTwoButton.titleLabel?.text == "Caterpie" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "catdark") && optionTwoButton.titleLabel?.text == "Caterpie" {
             randomImage.image = #imageLiteral(resourceName: "caterpie")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "catdark") && optionThreeButton.titleLabel?.text == "Caterpie" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "catdark") && optionThreeButton.titleLabel?.text == "Caterpie" {
             randomImage.image = #imageLiteral(resourceName: "caterpie")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "chimdark") && optionOneButton.titleLabel?.text == "Chimchar" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "chimdark") && optionOneButton.titleLabel?.text == "Chimchar" {
             randomImage.image = #imageLiteral(resourceName: "chimchar")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "chimdark") && optionTwoButton.titleLabel?.text == "Chimchar" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "chimdark") && optionTwoButton.titleLabel?.text == "Chimchar" {
             randomImage.image = #imageLiteral(resourceName: "chimchar")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "chimdark") && optionThreeButton.titleLabel?.text == "Chimchar" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "chimdark") && optionThreeButton.titleLabel?.text == "Chimchar" {
             randomImage.image = #imageLiteral(resourceName: "chimchar")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "squirtdark") && optionOneButton.titleLabel?.text == "Squirtle" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "squirtdark") && optionOneButton.titleLabel?.text == "Squirtle" {
             randomImage.image = #imageLiteral(resourceName: "squirtle")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "squirtdark") && optionTwoButton.titleLabel?.text == "Squirtle" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "squirtdark") && optionTwoButton.titleLabel?.text == "Squirtle" {
             randomImage.image = #imageLiteral(resourceName: "squirtle")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "squirtdark") && optionThreeButton.titleLabel?.text == "Squirtle" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "squirtdark") && optionThreeButton.titleLabel?.text == "Squirtle" {
             randomImage.image = #imageLiteral(resourceName: "squirtle")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "chardark") && optionOneButton.titleLabel?.text == "Charmander" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "chardark") && optionOneButton.titleLabel?.text == "Charmander" {
             randomImage.image = #imageLiteral(resourceName: "charmander")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "chardark") && optionTwoButton.titleLabel?.text == "Charmander" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "chardark") && optionTwoButton.titleLabel?.text == "Charmander" {
             randomImage.image = #imageLiteral(resourceName: "charmander")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "chardark") && optionThreeButton.titleLabel?.text == "Charmander" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "chardark") && optionThreeButton.titleLabel?.text == "Charmander" {
             randomImage.image = #imageLiteral(resourceName: "charmander")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemGreen
-        } else if sender.tag == 0 && randomImage.image == UIImage(named: "slowdark") && optionOneButton.titleLabel?.text == "Slowpoke" {
+        } else if tagIsZero && randomImage.image == UIImage(named: "slowdark") && optionOneButton.titleLabel?.text == "Slowpoke" {
             randomImage.image = #imageLiteral(resourceName: "slowpoke")
             optionOneButton.backgroundColor = .systemGreen
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 1 && randomImage.image == UIImage(named: "slowdark") && optionTwoButton.titleLabel?.text == "Slowpoke" {
+        } else if tagIsOne && randomImage.image == UIImage(named: "slowdark") && optionTwoButton.titleLabel?.text == "Slowpoke" {
             randomImage.image = #imageLiteral(resourceName: "slowpoke")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemGreen
             optionThreeButton.backgroundColor = .systemRed
-        } else if sender.tag == 2 && randomImage.image == UIImage(named: "slowdark") && optionThreeButton.titleLabel?.text == "Slowpoke" {
+        } else if tagIsTwo && randomImage.image == UIImage(named: "slowdark") && optionThreeButton.titleLabel?.text == "Slowpoke" {
             randomImage.image = #imageLiteral(resourceName: "slowpoke")
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
@@ -252,7 +264,17 @@ class ViewController: UIViewController {
             optionOneButton.backgroundColor = .systemRed
             optionTwoButton.backgroundColor = .systemRed
             optionThreeButton.backgroundColor = .systemRed
+            
+            let playAgainController = UIAlertController(title: "Play Again?", message: "Do you want to play again?", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+            
+            playAgainController.addAction(yesAction)
+            playAgainController.addAction(noAction)
+            present(playAgainController, animated: true, completion: nil)
         }
     }
+    
+    
 }
 

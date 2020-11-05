@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJh-dD-aVu"/>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9e7-tJ-Yeq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-Hp-cir" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cuw-gz-qVL"/>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Vu-iP-Tk1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nc-LR-Iur" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
@@ -69,7 +69,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3CH-eR-LCo"/>
+                                    <action selector="correctButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D4v-er-WLm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-ki-9oG" customClass="OptionButtonStyle" customModule="GuessThatPokemon" customModuleProvider="target">
@@ -109,9 +109,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="optionOneButton" destination="8Nc-LR-Iur" id="KGL-cY-slB"/>
-                        <outlet property="optionThreeButton" destination="YaT-SX-SRS" id="fsC-PH-NwY"/>
-                        <outlet property="optionTwoButton" destination="h7P-Hp-cir" id="kTO-QE-ZhE"/>
+                        <outlet property="nextButton" destination="OsM-ki-9oG" id="1f2-9R-76O"/>
+                        <outlet property="optionOneButton" destination="8Nc-LR-Iur" id="Vid-cX-ebv"/>
+                        <outlet property="optionThreeButton" destination="YaT-SX-SRS" id="bET-1k-fZO"/>
+                        <outlet property="optionTwoButton" destination="h7P-Hp-cir" id="k8X-mO-Kcf"/>
                         <outlet property="randomImage" destination="4Io-QR-2b5" id="KZd-cE-TXm"/>
                     </connections>
                 </viewController>
